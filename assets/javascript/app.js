@@ -19,7 +19,7 @@ var buttonGenerator = function () {
 // The user clicks on a generated orange button, which generates 10 static, non-animated gif images from the GIPHY API and places them on the page. 
 $("#buttonArea").on("click", ".btn", function () {
     var x = $(this).attr("data");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + x + "$api_key=dc6zaTOxFJmzC&limit=10";
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + x + "$api_key=y0A6UrdU5gN1P7kr87Jubc7Y11m4HBjg&limit=10";
 
     $.ajax({
         url: queryURL,
@@ -28,5 +28,17 @@ $("#buttonArea").on("click", ".btn", function () {
     }).done(function (response) {
         console.log(response);
 
+        var results = response.data;
 
+        for (var i = 0; i < results.length; i++) {
+            // a div is created to hold a gif of any topic
+            var topicDiv = $("<div>");
 
+            // Under every gif, display its rating (PG, G, so on).
+            var p = $("<p>");
+            p.text(results[i].rating);
+            var p = $("<p>").text("Rating: " + results[i].rating);
+
+            
+
+            
