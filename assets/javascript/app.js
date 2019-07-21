@@ -1,6 +1,6 @@
 // $(document).ready(function(){ 
 
-var topics = ["Developer", "Musician", "Artist", "Accountant", "Librarian", "Actor", "Scientist", "Teacher", "Gardener", "Lawyer", "Doctor", "Mechanic", "Florist", "Surfer", "Unemployed"];
+var topics = ["Developer", "Musician", "Artist", "Accountant", "Actor", "Scientist", "Teacher", "Gardener", "Lawyer", "Doctor", "Mechanic", "Florist", "Free Spirit", "IDK", "Unemployed"];
 
 var button;
 var newTopic = "";
@@ -19,7 +19,7 @@ var buttonGenerator = function () {
 // The user clicks on a generated orange button, which generates 10 static, non-animated gif images from the GIPHY API and places them on the page. 
 $("#buttonArea").on("click", ".btn", function () {
     var x = $(this).attr("data");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + x + "$api_key=y0A6UrdU5gN1P7kr87Jubc7Y11m4HBjg&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + x + "&api_key=y0A6UrdU5gN1P7kr87Jubc7Y11m4HBjg&limit=10";
 
     $.ajax({
         url: queryURL,
