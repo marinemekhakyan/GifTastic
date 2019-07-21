@@ -38,7 +38,26 @@ $("#buttonArea").on("click", ".btn", function () {
             var p = $("<p>");
             p.text(results[i].rating);
             var p = $("<p>").text("Rating: " + results[i].rating);
+                
+// add a CSS style to create colored borders around the gifs
+var topicImage = $("<img>").addClass("border");
 
-            
+// add states of animate and still which will be toggled 
+topicImage.attr("src", results[i].images.fixed_height_still.url);
+topicImage.attr("data-still", results[i].images.fixed_height_still.url);
+topicImage.attr("data-animate", results[i].images.fixed_height.url)
+topicImage.attr("data-state", "still")
+topicImage.addClass("gif");
+
+// image is appended to the div
+topicDiv.append(topicImage);
+// rating is appended to the div below the gif
+topicDiv.append(p);
+// new images will be placed at the beginning (top) of the containing gif area
+$("#gifArea").prepend(topicDiv);
+}
+})
+})
+
 
             
