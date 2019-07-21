@@ -1,6 +1,6 @@
 // $(document).ready(function(){ 
 
-var topics = ["Developer", "Musician", "Artist", "Accountant", "Librarian", "Actor", "Scientist", "Teacher", "Gardener", "Lawyer", "Doctor", "Mechanic", "Unemployed"];
+var topics = ["Developer", "Musician", "Artist", "Accountant", "Librarian", "Actor", "Scientist", "Teacher", "Gardener", "Lawyer", "Doctor", "Mechanic", "Florist", "Surfer", "Unemployed"];
 
 var button;
 var newTopic = "";
@@ -45,8 +45,8 @@ $("#buttonArea").on("click", ".btn", function () {
             // add states of animate and still which will be toggled 
             topicImage.attr("src", results[i].images.fixed_height_still.url);
             topicImage.attr("data-still", results[i].images.fixed_height_still.url);
-            topicImage.attr("data-animate", results[i].images.fixed_height.url)
-            topicImage.attr("data-state", "still")
+            topicImage.attr("data-animate", results[i].images.fixed_height.url);
+            topicImage.attr("data-state", "still");
             topicImage.addClass("gif");
 
             // image is appended to the div
@@ -82,7 +82,7 @@ $("#gifArea").on("click", ".gif", function (event) {
 
 $(".submit").on("click", function (event) {
     event.preventDefault();
-    
+
     console.log("submit");
     // sets inputted value to newTopic 
     newTopic = $("#searchArea").val();
@@ -91,10 +91,10 @@ $(".submit").on("click", function (event) {
     console.log(topics);
     // call the function that creates the new button
     buttonGenerator();
-    });
-    
-    
-    
-    buttonGenerator();
-    
+});
+
+
+
+buttonGenerator();
+
 

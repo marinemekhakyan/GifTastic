@@ -17,3 +17,22 @@ body {
     text-align: center;
     font-family: 'Barriecito', cursive; 
 }
+
+.btn {
+    margin:3px;
+    background-color: #51284F;
+    opacity: 0.7;
+    color: white;
+}
+
+#searchArea {
+    background-color: #F1E6B2;
+    font-size: 14px;
+}
+
+#whoAreYou {
+    color: #51284F;
+    margin: 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
