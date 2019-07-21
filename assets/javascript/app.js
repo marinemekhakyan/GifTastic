@@ -77,4 +77,24 @@ $("#gifArea").on("click", ".gif", function (event) {
 
 })
 
+// The form takes the value from the input box and adds it into the topics  array. The buttonGenerator function is called that takes each topic in the array remakes the buttons on the page.
+
+
+$(".submit").on("click", function (event) {
+    event.preventDefault();
+    
+    console.log("submit");
+    // sets inputted value to newTopic 
+    newTopic = $("#searchArea").val();
+    // new topic is added to the topics array 
+    topics.push(newTopic);
+    console.log(topics);
+    // call the function that creates the new button
+    buttonGenerator();
+    });
+    
+    
+    
+    buttonGenerator();
+    
 
