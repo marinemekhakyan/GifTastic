@@ -5,9 +5,16 @@ body {
 
 #header {
     background-color: #F1E6B2;
-    opacity: 0.5;
+    opacity: 0.6;
     border-radius: 5px;
     height: 90px;
     margin-top: 1px;
     color: brown;
+}
+
+#title {
+    color: #51284F;
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Barriecito', cursive; 
 }

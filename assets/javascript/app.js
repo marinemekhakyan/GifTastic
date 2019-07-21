@@ -38,26 +38,43 @@ $("#buttonArea").on("click", ".btn", function () {
             var p = $("<p>");
             p.text(results[i].rating);
             var p = $("<p>").text("Rating: " + results[i].rating);
-                
-// add a CSS style to create colored borders around the gifs
-var topicImage = $("<img>").addClass("border");
 
-// add states of animate and still which will be toggled 
-topicImage.attr("src", results[i].images.fixed_height_still.url);
-topicImage.attr("data-still", results[i].images.fixed_height_still.url);
-topicImage.attr("data-animate", results[i].images.fixed_height.url)
-topicImage.attr("data-state", "still")
-topicImage.addClass("gif");
+            // add a CSS style to create colored borders around the gifs
+            var topicImage = $("<img>").addClass("border");
 
-// image is appended to the div
-topicDiv.append(topicImage);
-// rating is appended to the div below the gif
-topicDiv.append(p);
-// new images will be placed at the beginning (top) of the containing gif area
-$("#gifArea").prepend(topicDiv);
-}
+            // add states of animate and still which will be toggled 
+            topicImage.attr("src", results[i].images.fixed_height_still.url);
+            topicImage.attr("data-still", results[i].images.fixed_height_still.url);
+            topicImage.attr("data-animate", results[i].images.fixed_height.url)
+            topicImage.attr("data-state", "still")
+            topicImage.addClass("gif");
+
+            // image is appended to the div
+            topicDiv.append(topicImage);
+            // rating is appended to the div below the gif
+            topicDiv.append(p);
+            // new images will be placed at the beginning (top) of the containing gif area
+            $("#gifArea").prepend(topicDiv);
+        }
+    })
 })
+
+// When the user clicks one of the still GIPHY images, and it animates. When the user clicks the gif again, it stops playing.
+$("#gifArea").on("click", ".gif", function (event) {
+    event.preventDefault();
+
+    // gets the current state of the clicked gif 
+    var state = $(this).attr("data-state");
+
+    // according to the current state gifs toggle between animate and still 
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
+
 })
 
 
-            
