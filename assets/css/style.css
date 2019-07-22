@@ -40,3 +40,16 @@ body {
 .gif {
     float: center;
 }
+
+@media screen and (max-width: 768px) {
+    .btn{
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .btn{
+        margin-top: 30px;
+    }
+}
+

@@ -1,2 +1,2 @@
-# GifTastic Professions
+# GifTastic
 [https://marinemekhakyan.github.io/GifTastic/]
